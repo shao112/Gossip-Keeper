@@ -1,0 +1,154 @@
+.footer{
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+}
+.container-fluid{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.sidebar{
+    height:100vh;
+    background: linear-gradient(to Top, #CE6666, #C23737);
+    border-bottom-right-radius: 30%;
+    /* animation-name:動畫名稱; */
+    animation-name: slide;
+    /* 持續時間 */
+    /* animation-duration: 持續時間; */
+    animation-duration: 1s;
+}
+@keyframes slide {
+
+    /* 開始狀態 */
+    0% {
+        transform: translateX(-200px);
+    }
+
+    /* 結束狀態 */
+    100% {
+        transform: translateX(0px);
+    }
+}
+.logo{
+    text-align: center;
+}
+.logo .img-fluid{
+    max-width: 60%;
+    margin-top: 15px;
+}
+.slogan{
+    margin: 10px 20px 0px 20px;
+}
+.navbar-toggler {
+    background-color: #9a5555;
+    border-radius: 20%;
+    border: 3px solid;
+}
+/* 個人化設定按鈕 border */
+.custom-toggler.navbar-toggler {
+    margin: 4px 20px;
+    border-color: white;
+}
+.collapsing {
+    width: 0;
+    transition-property: width;
+    height: 100%;
+    white-space: nowrap;
+}
+/* 隱藏選單拉出來的大小 */
+.p-4{
+    width: 51vh;
+    height: 65vh;
+    border-radius: 0% 0% 20% 0%;
+}
+
+.profile{
+    border-radius: 100%;
+    width: 160px;
+    height: 160px;
+    margin: 10px 32%;
+    overflow: hidden;
+}
+.text{
+    font-family: 'Noto Serif TC', serif;
+    font-size: 2.2rem;
+    color: #FFFFFF;
+    margin: 25px 0;
+}
+.text a{
+    color: #FFFFFF;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+/* 登入後會顯示的兩個按鈕 */
+.two_btn a{
+    display: block;
+    font-family: 'Noto Serif TC', serif;
+}
+.two_btn .btn{
+    margin: 15px auto;
+    border: 1px solid;
+    border-radius: 22px;
+    background: #9A5555;
+    width: 170px;
+    color: #ffffffff;
+    font-size: 20px;
+}
+/* 搜尋條 */
+.search{
+    margin-left: 234px;
+    align-items: center;
+    display: flex;
+}
+.search .form-control{
+    padding-left: 49px;
+    border-radius: 20px;
+    width: 300px;
+}
+.search .icon{
+    position: absolute;
+    margin: 4px 10px;
+    z-index: 2;
+    display: block;
+    width: 30px;
+    opacity: 65%;
+}
+/* 筆電螢幕 */
+@media (max-width:1537px) {
+    .search{
+        margin-left: 100px;
+    }
+    .search .form-control{
+        width: 257.4px;
+    }
+}
+/* 手機 */
+@media (max-width:415px) {
+    .p-4{
+        width: 100%;
+    }
+    .sidebar{
+        border-bottom-right-radius: 0%;
+    }
+    .slogan{
+        margin: 0;
+    }
+    .slogan img{
+        width: 200px;
+    }
+    .profile{
+        width: 80px;
+        height: 80px;
+    }
+    .col-3{
+        max-width: 40%;
+    }
+    .col-9{
+        max-width: 60%;
+    }
+}
+
+
+
+
+

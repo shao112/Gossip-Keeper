@@ -1,0 +1,76 @@
+{% extends 'base/base.html' %}
+
+    {% block title %}個人頁面{% endblock %}
+
+    {% block import %}
+
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'css/profile/profile.css' %}">
+
+    {% endblock %}
+
+{% block main %}
+    <div class="container-fluid">
+        <div class="row top">
+            <div class="col-5">
+                <div class="profile">
+                    <img src="{% static 'img/user/' %}{{ members.image }}" style="width: 180px;height: 180px;" alt="">
+                </div>
+                <div class="change_profile">
+                    更換頭像
+                </div>
+            </div>
+            <div class="col-7">
+                <div class="previous_page">
+                    <img src="{% static 'img/topic/left_arrow.png' %}" class="img-fluid left_arrow">
+                    <a href="{{request.META.HTTP_REFERER}}" type="button" class="btn">回上頁</a>
+                </div>
+                <div class="information">
+                    <p>暱稱：{{ members.name }}</p>
+                    <p>信箱：{{ members.email }}</p>
+                </div>
+                <div class="change_password">
+                    <a href="{% url 'change_password' members.id %}">更改密碼</a>
+                </div>
+            </div>
+        </div>
+        <div class="row bottom">
+            <div class="text">您已收藏&nbsp;<span style="color:#C23737">1</span>&nbsp;種話題</div>
+            <div class="form-group">
+                <p class="data" id="data">
+                    <a class="taga" href="https://youtu.be/dQw4w9WgXcQ">
+                        <span class="color-gray">論文</span>
+                    </a>
+                </p>
+            </div>
+            <div class="text">您已發表&nbsp;<span style="color:#C23737">5</span>&nbsp;篇文章</div> 
+            <div class="form-group">
+                <p class="data" id="data">
+                    <a class="taga" href="https://youtu.be/dQw4w9WgXcQ">
+                        <span class="color-gray">いいね</span>
+                    </a>
+                    <a class="taga" href="https://youtu.be/GtL1huin9EE">
+                        <span class="color-gray">プレス</span>
+                    </a>
+                    <a class="taga" href="https://www.youtube.com/channel/UC4l9gz3q65lTBFfFtW5LLeA/channels">
+                        <span class="color-gray">Watarai</span>
+                    </a>
+                    <a class="taga" href="https://www.youtube.com/channel/UC5dJFf4m-mEcoyJRfhBljoA">
+                        <span class="color-black">Seraph</span>
+                    </a>
+                    <a class="taga" href="https://www.youtube.com/channel/UCcDDxnoQcezyTUzHg5uHaKg">
+                        <span class="color-blue">Shikinagi</span>
+                    </a>
+                    <a class="taga" href="https://www.youtube.com/channel/UCC7rRD6P7RQcx0hKv9RQP4w">
+                        <span class="color-vip">Fura</span>
+                    </a>
+                    <a class="taga" href="https://www.youtube.com/channel/UCG0rzBZV_QMP4MtWg6IjhEA">
+                        <span class="color-new">Shu</span>
+                    </a>
+                </p>
+        
+                <!-- <input type="password" id="Signup-Image" class="form-control" required> -->
+            </div>
+        </div>
+    </div>
+{% endblock %}

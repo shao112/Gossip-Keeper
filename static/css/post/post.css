@@ -1,0 +1,56 @@
+.red_btn{
+    font-family: 'Noto Serif TC', serif;
+}
+.red_btn:hover {
+    background-color: #C23737;
+}
+/* top */
+/* 回上頁 */
+.previous_page{
+    position: absolute;
+    right: 462px;
+    top: 100px;
+}
+.previous_page .btn{
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #ffffff;
+    background-color: #C23737;
+    font-size: 23px;
+    padding-left: 65px;
+    border-radius: 1rem;
+}
+.previous_page .btn:hover{
+    background-color: #9a2a2a;
+}
+.left_arrow{
+    position: absolute;
+    margin: 6px 15px;
+    width: 40px;
+}
+.topic{
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 2.5rem;
+    color:#504848;
+    width: fit-content;
+    position: absolute;
+    left: 285px;
+    top: 75px;
+}
+/* 表單 */
+form{
+    max-width: 645px;
+    margin: auto;
+}
+label{
+    font-family: 'Noto Sans TC', sans-serif;
+}
+/* .form-group .title{
+    font-family: 'Noto Sans TC', sans-serif;
+}
+.form-group .content{
+    font-family: 'Noto Sans TC', sans-serif;
+} */
+/* ckeditor */
+.django-ckeditor-widget{
+    width: 600px;
+}

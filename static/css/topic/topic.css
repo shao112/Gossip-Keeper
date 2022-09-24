@@ -1,0 +1,49 @@
+.logo{
+    text-align: right;
+    padding-right: 10%;
+}
+.logo .img-fluid{
+    max-width: 255px;
+}
+/* 回上頁 button */
+.previous_page{
+    height: 100%;
+    padding-top: 10%;
+    align-items: center;
+    display: flex;
+}
+.previous_page .btn{
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #ffffff;
+    background-color: #C23737;
+    font-size: 23px;
+    padding-left: 65px;
+    border-radius: 1rem;
+}
+.previous_page .btn:hover {
+    background-color: #9a2a2a;
+}
+.left_arrow{
+    position: absolute;
+    margin: 6px 15px;
+    width: 40px;
+}
+
+.board{
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #70605D;
+    font-size: 1.3rem;
+
+    background-color: #FFFFFF;
+    border: 3px solid #f5e2d7;
+    border-radius: 1.8rem;
+    width: 480px;
+    height: 60px;
+    padding: 10px 20px;
+    float: right;
+}
+.post-text{
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #70605D;
+    margin: 10px 20px;
+}

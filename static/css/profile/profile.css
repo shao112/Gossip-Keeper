@@ -1,0 +1,134 @@
+/* 回上頁 */
+.previous_page{
+    position: absolute;
+    right: 352px;
+    top: 75px;
+}
+.previous_page .btn{
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #ffffff;
+    background-color: #C23737;
+    font-size: 23px;
+    padding-left: 65px;
+    border-radius: 1rem;
+}
+.previous_page .btn:hover{
+    background-color: #9a2a2a;
+}
+.left_arrow{
+    position: absolute;
+    margin: 6px 15px;
+    width: 40px;
+}
+/* 資訊 */
+.profile{
+    border-radius: 100%;
+    width: 180px;
+    height: 180px;
+    margin: 75px 0 20px 334px;
+    overflow: hidden;
+}
+.information{
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.9rem;
+    color: #FFFFFF;
+    margin-top: 149px;
+}
+.change_profile{
+    font-size: 1.2rem;
+    margin-left: 380px;
+    width: fit-content;
+    font-family: 'Noto Sans TC', sans-serif;
+    color:#504848;
+}
+.change_profile .a{
+    font-family: 'Noto Sans TC', sans-serif;
+    color:#504848;
+}
+.change_password{
+    font-size: 1.2rem;
+    /* margin-left: 92px; */
+    margin-top: 20px;
+    width: fit-content;
+}
+.change_password .a{
+    font-family: 'Noto Sans TC', sans-serif;
+    color:#504848;
+}
+
+.text{
+    font-family: 'Noto Sans TC', sans-serif;
+    margin-bottom: 15px;
+    font: #504848;
+    font-size: 1.3rem;
+}
+.top{
+    height: 350px;
+}
+.bottom{
+    padding: 0px 21%;
+    display: inline-block;
+}
+/* 網頁捲軸【寬+高度】 */
+::-webkit-scrollbar {
+    width: auto;
+    height: 10px;
+}
+
+/* 網頁捲軸【背景】 */
+::-webkit-scrollbar-track {
+    background: #F3B9B9;
+}
+
+/* 網頁捲軸【把手】 */
+::-webkit-scrollbar-thumb {
+    background: #c94a4a;
+    /* 圓角 */
+    border-radius: 8px;
+}
+
+/* 網頁捲軸【滑過時】把手 */
+::-webkit-scrollbar-thumb:hover {
+    background: #C23737;
+}
+.form-group{
+    margin-bottom: 50px;
+    border-radius: 15px;
+    background-color: #fff6e285;
+}
+.form-group .data {
+    /* position: absolute; */
+    /* top: 30%;
+    left: 35%; */
+    padding: 7px 15px;
+    overflow: auto;
+    overflow-y: hidden;
+    width: 891px;
+    white-space: nowrap;
+}
+
+/* 間隔 */
+.form-group .data .taga {
+    display: inline-block;
+    margin-bottom: 6px;
+
+}
+
+.form-group .data .taga {
+    font-size: 1.5rem;
+    letter-spacing: normal;
+    margin: 0 4px 4px 0;
+    padding: 5px 44px;
+    background-color: #fff;
+    color: #504848;
+    border-radius: 14px;
+}
+
+.form-group .data .taga:hover {
+    letter-spacing: normal;
+    margin: 0 4px 4px 0;
+    /* padding: 5px 8px; */
+    background-color: #dfdfdf;
+    /* color: #fff; */
+    /* border-radius: 50px; */
+}

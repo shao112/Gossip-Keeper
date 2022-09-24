@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+
+    {% block title %}發文{% endblock %}
+
+    {% block import %}
+
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'css/post/post.css' %}">
+
+    {% endblock %}
+
+{% block main %}
+    <div class="top" style="height: 200px;">
+        <div class="topic">
+            話題：{{ topic }}
+        </div>
+        <div class="previous_page">
+            <img src="{% static 'img/topic/left_arrow.png' %}" class="img-fluid left_arrow">
+            <a href="{{request.META.HTTP_REFERER}}" type="button" class="btn btn-danger">回上頁</a>
+        </div>
+    </div>
+    <form action="" enctype="multipart/form-data"method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="post-title" class="title">{{ form.title.label }}</label>
+            {{ form.title }}
+            <!-- <input id="post-title" type="text" class="form-control"> -->
+        </div>
+        <label for="post-content" class="content">{{ form.content.label }}</label>
+        <div class="form-group">
+            
+            {{ form.media }}
+            {{ form.content | safe }}
+            <!-- <input id="post-content" type="text" class="form-control" style="height:200px;"> -->
+        </div>
+        <input type="submit" class="btn btn-danger red_btn" value="送出" style="color: #fff;"></input>
+    </form>
+{% endblock %}

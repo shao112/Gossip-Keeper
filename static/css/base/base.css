@@ -1,0 +1,12 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+    /* vh(view height)指瀏覽器內部的可視區域高度的百分比 */
+    height:100vh;
+    /* background: linear-gradient(to bottom right ,#E6A689 , #F0E5D1,#FFFFFF ); */
+    /* -webkit 支援 Chrome、Safari */
+    background: -webkit-linear-gradient(-60deg, #E6A689 30%, #F0E5D1 70%,#FFFFFF);
+	/* font-family: 'open sans', sans-serif; */
+}

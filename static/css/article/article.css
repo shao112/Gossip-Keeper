@@ -1,0 +1,80 @@
+/* 回上頁 */
+.previous_page{
+    position: absolute;
+    right: 252px;
+    top: 44px;
+}
+.previous_page .btn{
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #ffffff;
+    background-color: #C23737;
+    font-size: 23px;
+    padding-left: 65px;
+    border-radius: 1rem;
+}
+.previous_page .btn:hover{
+    background-color: #9a2a2a;
+}
+.left_arrow{
+    position: absolute;
+    margin: 6px 15px;
+    width: 40px;
+}
+/* top */
+.top{
+    height: 122px;
+    padding-left: 12%;
+    padding-top: 28px;
+    height: 118px;
+}
+.title{
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 2.5rem;
+    color: #504848;
+    width: fit-content;
+}
+.main{
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #504848;
+    margin: auto;
+    width: 75vw;
+    height: 655px;
+    border: 1px solid black;
+}
+.content{
+    border-radius: 26px;
+    background-color: #FFF6E2;
+    /* border: 1px solid black; */
+    height: 200px;
+    padding: 17px;
+    font-size: 1rem;
+}
+.comment{
+    border-radius: 26px;
+    background-color: #FFF6E250;
+    /* 這邊設透明邊框，因為把框框拿掉，以下 msg 的 margin 會以上面 content 開始算 */
+    border: 1px solid #ffffff00;
+    height: 300px;
+    margin: 30px 0;
+}
+.msg{
+    background-color: #FFF6E2;
+    border-radius: 30px;
+    width: 87%;
+    margin: auto;
+    height: 58px;
+    margin-top: 15px
+}
+.leave_msg{
+    background-color: #FFF6E2;
+    /* border: 1px solid black; */
+    height: 90px;
+    /* margin-top: 61px; */
+    display: flex;
+}
+.user_name{
+    margin: 21px 20px 0 20px;
+}
+.input_msg{
+    width: 90%;
+}

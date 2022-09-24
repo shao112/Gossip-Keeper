@@ -1,0 +1,91 @@
+/* 文字雲 */
+.cloud-one,.cloud-two,.cloud-three,.cloud-four,.cloud-five,.cloud-six{
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #504848;
+    text-align: center;
+    border-radius: 50%;
+    /* width: max-content; */
+    /* 動畫名稱; */
+    animation-name: scale;
+    /* 持續時間 */
+    animation-duration: 1s;
+}
+@keyframes scale {
+
+    /* 開始狀態 */
+    0% {
+        transform: scale(0.5);
+    }
+    60% {
+        transform: scale(1.2);
+    }
+    /* 結束狀態 */
+    100% {
+        transform: scale(1.0);
+    }
+}
+.cloud-one{
+    font-size: 2rem;
+    position: absolute;
+    left: 40%;
+    top: 45%;
+    width: 250px;
+    height: 150px;
+    line-height: 150px;
+}
+.cloud-two{
+    font-size: 1.5rem;
+    position: absolute;
+    left: 19%;
+    bottom: 28%;
+    width: 250px;
+    height: 90px;
+    line-height: 90px;
+}
+.cloud-three{
+    font-size: 1.2rem;
+    position: absolute;
+    right: 13%;
+    bottom: 24%;
+    width: 250px;
+    height: 80px;
+    line-height: 80px;
+}
+.cloud-four{
+    font-size: 1.2rem;
+    position: absolute;
+    top: 35%;
+    left: 16%;
+    width: 220px;
+    height: 70px;
+    line-height: 70px;
+}
+.cloud-five{
+    font-size: 1.2rem;
+    position: absolute;
+    top: 35%;
+    right: 19%;
+    width: 220px;
+    height: 70px;
+    line-height: 70px;
+}
+.cloud-six{
+    font-size: 1.2rem;
+    position: absolute;
+    right: 35%;
+    bottom: 16%;
+    width: 200px;
+    height: 100px;
+    line-height: 100px;
+}
+/* 手機、平板*/
+@media (max-width:740px) {
+    .cloud-one,.cloud-two,.cloud-three,.cloud-four,.cloud-five,.cloud-six{
+        display: none;
+    }
+}
+@media (max-height:536px) {
+    .cloud-one,.cloud-two,.cloud-three,.cloud-four,.cloud-five,.cloud-six{
+        display: none;
+    }
+}

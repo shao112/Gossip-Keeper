@@ -1,0 +1,27 @@
+/* 註冊表單 */
+.form-group{
+    margin: 1.5rem 2rem;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+}
+.form-group label{
+    width: 27%;
+}
+.form-group input{
+    width: 60%;
+}
+.form-group .form-check{
+    width: 60%;
+    display: inline-flex;
+}
+.red_btn{
+    font-family: 'Noto Serif TC', serif;
+}
+.red_btn:hover {
+    background-color: #C23737;
+}
+#Signup-Image{
+    margin: 0 20%;
+    font-size: 18px;
+}
