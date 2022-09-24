@@ -56,7 +56,7 @@ class Post(models.Model):
     topic_fk = models.ForeignKey(Topic,on_delete = models.CASCADE, null=True, blank=True)
     topic = models.CharField(max_length=20, verbose_name="話題", blank=True)
     title = models.CharField(max_length=20, verbose_name="標題")
-    content = RichTextUploadingField(max_length=100, verbose_name='編輯器內文')
+    content = RichTextUploadingField(max_length=200, verbose_name='編輯器內文')
     created_date = models.DateField(default=timezone.now,verbose_name='建立日期')
     update_date = models.DateField(auto_now=True, verbose_name='更新日期')
     class Meta:

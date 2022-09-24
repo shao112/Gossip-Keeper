@@ -38,7 +38,7 @@
     color: #504848;
     margin: auto;
     width: 75vw;
-    height: 655px;
+    height: 635px;
     border: 1px solid black;
 }
 .content{
@@ -63,17 +63,19 @@
     width: 87%;
     margin: auto;
     height: 58px;
-    margin-top: 15px
+    margin-top: 15px;
+    padding: 14px 18px;
 }
 .leave_msg{
     background-color: #FFF6E2;
     /* border: 1px solid black; */
-    height: 90px;
+    height: 80px;
     /* margin-top: 61px; */
     display: flex;
+    padding: 18px 0px;
 }
 .user_name{
-    margin: 21px 20px 0 20px;
+    margin: 20px 0;
 }
 .input_msg{
     width: 90%;

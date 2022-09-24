@@ -20,6 +20,7 @@ def index(request):
     ptt = PTT()
     top_six = ptt.scrape()
     print(top_six)
+
     if request.POST.get('submit') == '登入' and request.method == "POST":
         print("進到登入")
         return login(request)
@@ -140,7 +141,6 @@ def topic(request):
 
 # 所有文章
 def all(request, topic):
-    # 這邊要篩選 .get(topic=topic) 上面request後面也要加
     post = Post.objects.filter(topic=topic)
     print(post)
     # post = Post.objects.filter(topic_fk__name=topic)
@@ -183,7 +183,9 @@ def post(request, topic):
             print(title)
             Post.objects.filter(title=title).update(topic=topic)
             print("發布成功!")
-            return HttpResponseRedirect("/")
+            return all(request, topic)
+        print("form is unvalid")
+        print(form.errors)
     
     context = {
         'form':form,
