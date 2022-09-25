@@ -42,15 +42,13 @@
         </div>
         {% endfor %}
 
+        {% if post %}
         <div class="row row-three" style="justify-content: center; position: relative;">
             <ul class="pagination" style="position: absolute; bottom: 0;">
-
-                {% if post.has_previous %}
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ post.previous_page_number }}">前一頁</a>
+                    <a href="{% if post.has_previous %} ?page={{ post.previous_page_number }} {% endif %}"><div class="previous_triangle"></div></a>
                 </li>
-                {% endif %}
-                <span>
+                <span class="page">
                     {% for i in post.paginator.page_range %}
                         {% if i == post.number %} 
                             {{ i }}
@@ -58,14 +56,13 @@
                     {% endfor %}
                     / {{ post.paginator.num_pages }}
                 </span>
-                {% if post.has_next %}
+                
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ post.next_page_number }}">下一頁</a>
+                    <a href="{% if post.has_next %} ?page={{ post.next_page_number }} {% endif %}"><div class="next_triangle"></div></a>
                 </li>
-                {% endif %}
-
             </ul>
         </div>
+        {% endif %}
         <!-- 參考 https://ithelp.ithome.com.tw/articles/10196973 -->
     </div>
 {% endblock %}
