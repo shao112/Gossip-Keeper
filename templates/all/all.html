@@ -10,7 +10,7 @@
     {% endblock %}
 
 {% block main %}
-    <div class="container" style="height: 180px; display: flex; padding-top: 75px; padding-left: 90px;">
+    <div class="container" style="height: 134px; display: flex; padding-top: 28px; padding-left: 90px;">
 
         <div class="topic">
             話題：{{ topic }}
@@ -28,20 +28,21 @@
 
     </div>
 
-    <div class="container" style="height:700px; justify-content: center; display: grid;">
+    <div class="container" style="height:600px; justify-content: center; display: grid;">
 
         {% for p in post %}
-        <div class="row" style="padding:10px 0px; margin-bottom: 10px;">
+        <div class="row">
             <a href="{% url 'article' pk=p.pk %}">
                 <div class="board shadow">
                     <span class="badge author">{{ p.author }}</span>
                     {{ p.title }}
+                    <span class="date">| &nbsp; {{ p.created_date }}</span>
                 </div>
             </a>
         </div>
         {% endfor %}
 
-        <div class="row row-three" style="padding:20px 0px; justify-content: center; position: relative;">
+        <div class="row row-three" style="justify-content: center; position: relative;">
             <ul class="pagination" style="position: absolute; bottom: 0;">
 
                 {% if post.has_previous %}

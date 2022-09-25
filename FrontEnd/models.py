@@ -62,7 +62,7 @@ class Post(models.Model):
     class Meta:
         verbose_name = "貼文"   # 單數
         verbose_name_plural = verbose_name   #複數
-        ordering = ['update_date']
+        ordering = ['-created_date']
     def __str__(self):
         return self.title
 

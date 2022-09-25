@@ -120,7 +120,7 @@ def topic(request):
         print("------")
     # 重新抓 Topic
     topic = Topic.objects.all()
-    # topic_hot = Topic.objects.all()[:3]
+    # topic_hot = Topic.objects.all()[:3]、一般 topic [3:]
     
     # 顯示五筆資料
     paginator = Paginator(topic, 5)
