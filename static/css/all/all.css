@@ -1,17 +1,15 @@
-.container{
-    justify-content: center;
-    display: grid;
-}
-/* 回上頁 跟 回上頁*/
+/* 回上頁 跟 發文*/
 .post_page{
-    position: absolute;
+    margin-left: 453px;
+    margin-right: 20px;
+    /* position: absolute;
     right: 516px;
-    top: 75px;
+    top: 75px; */
 }
 .previous_page{
-    position: absolute;
+    /* position: absolute;
     right: 330px;
-    top: 75px;
+    top: 75px; */
 }
 .post_page .btn,.previous_page .btn{
     font-family: 'Noto Sans TC', sans-serif;
@@ -33,13 +31,13 @@
 .board{
     font-family: 'Noto Sans TC', sans-serif;
     color: #70605D;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     background-color: #FFFFFF;
     border: 3px solid #f5e2d7;
     border-radius: 2.0rem;
     width: 1000px;
     height: 73px;
-    padding: 14px 26px;
+    padding: 12px 26px;
     /* float: right; */
 }
 .topic{
@@ -47,7 +45,14 @@
     font-size: 2.5rem;
     color:#504848;
     width: fit-content;
-    position: absolute;
+    /* position: absolute;
     left: 285px;
-    top: 75px;
+    top: 75px; */
+}
+.author{
+    margin-right: 16px;
+    padding: 10px;
+    font-size: 1.5rem;
+    background: #E37878;
+    color: #fff;
 }

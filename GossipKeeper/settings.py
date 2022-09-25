@@ -61,7 +61,7 @@ CKEDITOR_CONFIGS = {
             ['Source', '-', 'Bold', 'Italic']
         ],        
     'toolbar_Full': [        
-            [ 'Scayt', 'Image','Flash','Table','HorizontalRule','Smiley','Checkbox', 'Radio','Bold','Italic','Underline' ],            
+            [ 'Image','Flash','Table','HorizontalRule','Smiley','Checkbox', 'Radio','Bold','Italic','Underline' ],            
             [ 'Strike','Subscript','Superscript','-','RemoveFormat' ],          
             [ 'Link'],            '/',            
             [ 'Styles','Font','FontSize' ] ,            
@@ -70,8 +70,8 @@ CKEDITOR_CONFIGS = {
 
         ],
     'tabSpaces': 2,
-    'width': '100%',
-    'height': '100%',   
+    'width': '637px',
+    'height': '210px',   
     'toolbar': 'Full', #工具欄全部功能     
     'extraPlugins': 'codesnippet',   #插入程式code
     }

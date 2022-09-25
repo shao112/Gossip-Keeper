@@ -10,38 +10,61 @@
     {% endblock %}
 
 {% block main %}
-    <div class="top" style="height: 180px;">
+    <div class="container" style="height: 180px; display: flex; padding-top: 75px; padding-left: 90px;">
+
         <div class="topic">
             話題：{{ topic }}
         </div>
+
         <div class="post_page">
             <img src="{% static 'img/topic/plus.png' %}" class="img-fluid left_arrow">
             <a href="{% url 'post' topic=topic %}" type="button" class="btn btn-danger">發&nbsp;&nbsp;&nbsp;文</a>
         </div>
+
         <div class="previous_page">
             <img src="{% static 'img/topic/left_arrow.png' %}" class="img-fluid left_arrow">
             <a href="{% url 'topic' %}" type="button" class="btn btn-danger">回主題</a>
         </div>
+
     </div>
-    <div class="container">
+
+    <div class="container" style="height:700px; justify-content: center; display: grid;">
+
         {% for p in post %}
         <div class="row" style="padding:10px 0px; margin-bottom: 10px;">
             <a href="{% url 'article' pk=p.pk %}">
                 <div class="board shadow">
+                    <span class="badge author">{{ p.author }}</span>
                     {{ p.title }}
                 </div>
             </a>
         </div>
         {% endfor %}
-        <!-- <div class="row row-three" style="padding:20px 0px">
-            <ul class="pagination">
-                {% for i in post.paginator.page_range %}
-                <li class="page-item active">
-                    <a class="page-link" href="?page={{ i }}"></a>
+
+        <div class="row row-three" style="padding:20px 0px; justify-content: center; position: relative;">
+            <ul class="pagination" style="position: absolute; bottom: 0;">
+
+                {% if post.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ post.previous_page_number }}">前一頁</a>
                 </li>
-                {% endfor %}
+                {% endif %}
+                <span>
+                    {% for i in post.paginator.page_range %}
+                        {% if i == post.number %} 
+                            {{ i }}
+                        {% endif %}
+                    {% endfor %}
+                    / {{ post.paginator.num_pages }}
+                </span>
+                {% if post.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ post.next_page_number }}">下一頁</a>
+                </li>
+                {% endif %}
+
             </ul>
-        </div> -->
+        </div>
         <!-- 參考 https://ithelp.ithome.com.tw/articles/10196973 -->
     </div>
 {% endblock %}
