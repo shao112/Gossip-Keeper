@@ -57,7 +57,7 @@ class SignupForm(forms.ModelForm):
                     'id': 'password',
                     'onblur': 'checkpas1()',
                     'title': '請輸入八個英、數字，不可輸入符號及空格',
-                    'pattern': '([A-Z0-9])\w{8,}'
+                    'pattern': '([a-zA-Z0-9])\w{8,}'
                 }),
             'image': forms.Select(choices=image_type,
                 attrs={
