@@ -4,12 +4,12 @@
 .red_btn:hover {
     background-color: #C23737;
 }
-/* top */
 /* 回上頁 */
 .previous_page{
-    position: absolute;
+    margin-left: 478px
+    /* position: absolute;
     right: 462px;
-    top: 100px;
+    top: 100px; */
 }
 .previous_page .btn{
     font-family: 'Noto Sans TC', sans-serif;
@@ -32,9 +32,6 @@
     font-size: 2.5rem;
     color:#504848;
     width: fit-content;
-    position: absolute;
-    left: 285px;
-    top: 75px;
 }
 /* 表單 */
 form{
@@ -44,12 +41,6 @@ form{
 label{
     font-family: 'Noto Sans TC', sans-serif;
 }
-/* .form-group .title{
-    font-family: 'Noto Sans TC', sans-serif;
-}
-.form-group .content{
-    font-family: 'Noto Sans TC', sans-serif;
-} */
 /* ckeditor */
 /* .django-ckeditor-widget{
     width: 637px;

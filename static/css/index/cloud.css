@@ -25,7 +25,7 @@
     }
 }
 .cloud-one{
-    font-size: 2rem;
+    font-size: 2.5rem;
     position: absolute;
     left: 40%;
     top: 45%;
@@ -34,25 +34,25 @@
     line-height: 150px;
 }
 .cloud-two{
-    font-size: 1.5rem;
+    font-size: 1.9rem;
     position: absolute;
     left: 19%;
     bottom: 28%;
     width: 250px;
-    height: 90px;
+    height: 100px;
     line-height: 90px;
 }
 .cloud-three{
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     position: absolute;
     right: 13%;
     bottom: 24%;
     width: 250px;
-    height: 80px;
+    height: 90px;
     line-height: 80px;
 }
 .cloud-four{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     position: absolute;
     top: 35%;
     left: 16%;
@@ -61,7 +61,7 @@
     line-height: 70px;
 }
 .cloud-five{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     position: absolute;
     top: 35%;
     right: 19%;
@@ -70,7 +70,7 @@
     line-height: 70px;
 }
 .cloud-six{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     position: absolute;
     right: 35%;
     bottom: 16%;
