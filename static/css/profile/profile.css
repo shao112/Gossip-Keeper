@@ -133,26 +133,58 @@
     /* border-radius: 50px; */
 }
 .accordion {
-    background-color: #eee;
     color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100px;
+    /* cursor: pointer; */
+    /* padding: 18px; */
+    /* width: 100px; */
     border: none;
-    text-align: left;
+    /* text-align: left; */
     outline: none;
     font-size: 15px;
     transition: 0.4s;
 }
 
-.active, .accordion:hover {
-    background-color: #ccc;
-}
-
 .panel {
-    <!-- padding: 0 18px; -->
+    padding: 0 18px;
     background-color: white;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+}
+/* 雅棋 */
+.form-group img {
+    width: 40px;
+    height: 40px;
+
+}
+
+#rrr input[type="radio"] {
+    display: none;
+    margin: 0 50px 50px 0;
+    padding: 30px 30px;
+}
+
+#rrr input:checked+.button {
+    background: #5e7380;
+    color: #fff;
+    cursor: default;
+
+}
+
+#rrr .button {
+    display: inline-block;
+    margin: 0 5px 10px 0;
+    padding: 5px 10px;
+    background: #f7f7f7;
+    color: #333;
+    cursor: pointer;
+}
+
+#rrr .button:hover {
+    background: #bbb;
+    color: #fff;
+}
+
+#rrr .round {
+    border-radius: 5px;
 }
