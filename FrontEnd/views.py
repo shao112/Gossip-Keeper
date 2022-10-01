@@ -20,6 +20,19 @@ def index(request):
     ptt = PTT()
     top_six = ptt.scrape()
     print(top_six)
+    # 看這六個關鍵字有沒有在資料庫裡，有的話就加 times，沒有就存資料庫
+    # for i in top_six:
+    #     print(i)
+    #     topic = Topic.objects.filter(name=i)
+    #     if not topic:
+    #         print("新的關鍵字，儲存至資料庫！")
+    #         Topic.objects.create(name=i)
+    #     else:
+    #         print("已有此關鍵字，出現次數加一！")
+    #         topic = Topic.objects.get(name=i)
+    #         times = topic.times + 1
+    #         topic = Topic.objects.filter(name=i).update(times=times)
+
 
     if request.POST.get('submit') == '登入' and request.method == "POST":
         print("進到登入")
@@ -159,6 +172,8 @@ def all(request, topic):
         'topic': topic
     }
     return render(request, "all/all.html",context)
+
+
 # 文章詳細內文
 def article(request, pk):
     # 讀取 session
