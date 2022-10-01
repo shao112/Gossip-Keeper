@@ -1,7 +1,6 @@
 # GossipKeeper
 以 Django 網頁框架為主，結合網路爬蟲，製作網路熱門話題論壇。
 
-[HackMD](https://hackmd.io/4LAHtE-QTHSRzIYHc30RBA?both)
 ```
 cd 至專案路徑，執行以下指令
 python manage.py runserver
