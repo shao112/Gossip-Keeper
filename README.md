@@ -1,11 +1,6 @@
 # GossipKeeper
 以 Django 網頁框架為主，結合網路爬蟲，製作網路熱門話題論壇。
 
-```
-cd 至專案路徑，執行以下指令
-python manage.py runserver
-```
-
 ## 實作功能
 
 會員制度 (使用者可操作的功能)
