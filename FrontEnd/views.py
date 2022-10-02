@@ -232,6 +232,11 @@ def profile(request):
 
     return render(request, "profile/profile.html",context)
 
+
+# 規範
+def rule(request):
+    return render(request, "rule/rule.html")
+# 修改密碼
 def change_password(request, pk):
 
     members = Members.objects.get(id=pk)

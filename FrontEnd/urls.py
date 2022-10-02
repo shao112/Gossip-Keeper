@@ -24,6 +24,8 @@ urlpatterns = [
     # 發文
     path('post/<topic>', views.post, name='post'),
 
+    # 規範
+    path('rule', views.rule, name='rule'),
     # 修改密碼
     path('change_password/<pk>', views.change_password, name='change_password'),
 ]
