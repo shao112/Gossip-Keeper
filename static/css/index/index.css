@@ -1,8 +1,3 @@
-.footer{
-    position: absolute;
-    bottom: 25px;
-    width: 100%;
-}
 .container-fluid{
     padding-right: 0px;
     padding-left: 0px;
@@ -57,9 +52,12 @@
 }
 /* 隱藏選單拉出來的大小 */
 .p-4{
-    width: 51vh;
+    width: 383px;
     height: 65vh;
     border-radius: 0% 0% 20% 0%;
+}
+.p-4 a{
+    text-decoration: none;
 }
 
 .profile{
@@ -112,6 +110,11 @@
     display: block;
     width: 30px;
     opacity: 65%;
+}
+.footer{
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
 }
 /* 筆電螢幕 */
 @media (max-width:1537px) {

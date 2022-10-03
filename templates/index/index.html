@@ -11,6 +11,9 @@
     <!-- 註冊登入表單的頭像選項 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" />
     
+    <!-- import vue and axios -->
+    <script src="{% static 'js/vue.js' %}"> </script>
+    <script src="{% static 'js/axios.min.js' %}"> </script>
     {% endblock %}
 
 
@@ -32,9 +35,9 @@
                     <!-- 隱藏內容 -->
                     <div class="collapse width position-fixed" id="navbarToggleExternalContent">
                         <div class="bg-dark p-4">
-                            <h4 class="text-white font-weight-bold" style="font-size:1.8rem">使用條例</h4>
+                            <h4 class="text-white font-weight-bold" style="font-size:1.8rem">歡迎光臨炎管家</h4>
                             <span class="text-white" style="font-size:1.5rem">
-                                歡迎光臨炎管家網站<br>
+                                <a href="{% url 'rule' %}" target="_blank" rel="noopener noreferrer">使用規範</a><br>
                                 本網站將提供最燒的話題<br>
                                 期待各位加入討論 燃燒起來<br>
                                 一起來瞭解今日最火話題吧!

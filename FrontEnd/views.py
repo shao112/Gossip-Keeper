@@ -21,17 +21,16 @@ def index(request):
     top_six = ptt.scrape()
     print(top_six)
     # 看這六個關鍵字有沒有在資料庫裡，有的話就加 times，沒有就存資料庫
-    # for i in top_six:
-    #     print(i)
-    #     topic = Topic.objects.filter(name=i)
-    #     if not topic:
-    #         print("新的關鍵字，儲存至資料庫！")
-    #         Topic.objects.create(name=i)
-    #     else:
-    #         print("已有此關鍵字，出現次數加一！")
-    #         topic = Topic.objects.get(name=i)
-    #         times = topic.times + 1
-    #         topic = Topic.objects.filter(name=i).update(times=times)
+    for i in top_six:
+        topic = Topic.objects.filter(name=i)
+        if not topic:
+            print("新的關鍵字，儲存至資料庫！")
+            Topic.objects.create(name=i)
+        else:
+            print("已有此關鍵字，出現次數加一！")
+            topic = Topic.objects.get(name=i)
+            times = topic.times + 1
+            topic = Topic.objects.filter(name=i).update(times=times)
 
 
     if request.POST.get('submit') == '登入' and request.method == "POST":

@@ -1,6 +1,9 @@
-<div class="main">
+<div class="main" id="app">
     <div class="filter">
-        年/月/日
+        <span id="Display_Now" style="float: left;">現在的年月日是...</span>
+        <a href="" @click="getYear()">年</a>/
+        <a href="" @click="getMonth()">月</a>/
+        <a href="">日</a>
     </div>
 
     <div class="cloud-one shadow bg-white">
@@ -22,3 +25,40 @@
         {{ ptt.5 }}
     </div>
 </div>
+
+<script>
+    axios.defaults.xsrfCookieName = 'csrftoken';
+    axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+
+    let filterVue = new Vue({
+        el: '#app',
+        delimiters: ['${', '}'],
+        data: {
+            search: "",
+            type: "",
+            topList: [],
+        },
+        mounted: function () {
+            axios.post("")
+                .then((response) => {
+                    console.log(response)
+                    // let getdata = response.data;
+                    // console.log(getdata);
+                    // this.topList = getdata;
+                })
+                .catch((error) => console.log(error));
+        },
+        methods: {
+            getYear() {
+                var date = new Date();
+                var year = date.getFullYear();
+                document.getElementById('Display_Now').innerHTML = "本年（" + year +  "）的熱門關鍵字"
+            },
+            getMonth() {
+                var date = new Date();
+                var month = date.getMonth()+1;
+                document.getElementById('Display_Now').innerHTML = "本月（" + month + "）的熱門關鍵字"
+            }
+        }
+    })
+</script>

@@ -1,7 +1,8 @@
 .filter{
     font-size: 1.7rem;
     text-align: right;
-    padding: 1.5% 8% 0 0;
+    padding: 1.5% 8% 0 8%;
+    color: #504848;
 }
 /* 文字雲 */
 .cloud-one,.cloud-two,.cloud-three,.cloud-four,.cloud-five,.cloud-six{
