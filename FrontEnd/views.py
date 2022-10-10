@@ -11,6 +11,7 @@ from django.contrib import messages
 from django.core.paginator import Paginator
 
 from Scrape.scrapers import PTT
+from Scrape.googlenews_10 import google_news
 
 # Create your views here.
 # 首頁
@@ -18,8 +19,15 @@ def index(request):
     Login_form = LoginForm()
     Signup_form = SignupForm()
     ptt = PTT()
+
     top_six = ptt.scrape()
     print(top_six)
+
+    googlenews = google_news(top_six)
+    link = googlenews.google()
+    print("連結")
+    print(link)
+
     # 看這六個關鍵字有沒有在資料庫裡，有的話就加 times，沒有就存資料庫
     for i in top_six:
         topic = Topic.objects.filter(name=i)
@@ -48,7 +56,8 @@ def index(request):
         'Login_form': Login_form,
         'Signup_form': Signup_form,
         'members': members,
-        'ptt': top_six
+        'ptt': top_six,
+        'link':link
     }
 
     return render(request, "index/index.html", context)
