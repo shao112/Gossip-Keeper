@@ -1,6 +1,6 @@
 /* 回上頁 跟 發文*/
 .post_page{
-    margin-left: 453px;
+    margin-left: 353px;
     margin-right: 20px;
     /* position: absolute;
     right: 516px;
@@ -11,7 +11,7 @@
     right: 330px;
     top: 75px; */
 }
-.post_page .btn,.previous_page .btn{
+.post_page .btn,.previous_page .btn, .home .btn {
     font-family: 'Noto Sans TC', sans-serif;
     color: #ffffff;
     background-color: #C23737;

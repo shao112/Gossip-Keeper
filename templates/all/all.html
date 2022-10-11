@@ -15,7 +15,9 @@
         <div class="topic">
             話題：{{ topic }}
         </div>
-
+        <div class="home">
+            <a href="{% url 'index' %}" type="button" class="btn btn-danger">回首頁</a>
+        </div>
         <div class="post_page">
             <img src="{% static 'img/topic/plus.png' %}" class="img-fluid left_arrow">
             <a href="{% url 'post' topic=topic %}" type="button" class="btn btn-danger">發&nbsp;&nbsp;&nbsp;文</a>

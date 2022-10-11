@@ -112,9 +112,9 @@
     opacity: 65%;
 }
 .footer{
-    position: absolute;
+    position: fixed;
     bottom: 25px;
-    width: 100%;
+    width: 75%;
 }
 /* 筆電螢幕 */
 @media (max-width:1537px) {

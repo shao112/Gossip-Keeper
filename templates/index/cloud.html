@@ -1,9 +1,9 @@
 <div class="main" id="app">
     <div class="filter">
-        <span id="Display_Now" style="float: left;">現在的年月日是...</span>
-        <a href="" @click="getYear()">年</a>/
-        <a href="" @click="getMonth()">月</a>/
-        <a href="">日</a>
+        <span id="Display_Now" style="float: left;">${ msg }</span>
+        <span @click="getYear()">年</span> /
+        <span @click="getMonth()">月</span> /
+        <span @click="getDay()">日</span> 
     </div>
 
     <div class="cloud-one shadow bg-white">
@@ -40,7 +40,7 @@
         delimiters: ['${', '}'],
         data: {
             search: "",
-            type: "",
+            msg: "",
             topList: [],
         },
         mounted: function () {
@@ -57,12 +57,19 @@
             getYear() {
                 var date = new Date();
                 var year = date.getFullYear();
-                document.getElementById('Display_Now').innerHTML = "本年（" + year +  "）的熱門關鍵字"
+                // document.getElementById('Display_Now').innerHTML = "本年（" + year +  "）的熱門關鍵字"
+                this.msg = year +  " 年的熱門關鍵字！";
             },
             getMonth() {
                 var date = new Date();
                 var month = date.getMonth()+1;
-                document.getElementById('Display_Now').innerHTML = "本月（" + month + "）的熱門關鍵字"
+                this.msg = "今年 " + month +  " 月的熱門關鍵字！";
+            },
+            getDay(){
+                var date = new Date();
+                var day = date.getDate();
+                var month = date.getMonth()+1;
+                this.msg = "今日 " + month + "/" + day +  " 的熱門關鍵字！";
             }
         }
     })
