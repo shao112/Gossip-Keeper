@@ -9,13 +9,13 @@ class google_news:
     def __init__(self, top_six):
         self.data = top_six
         print("放入完成")
-        print(self.data)
+        # print(self.data)
 
     def google(self):
 
-        titles = []
+        # titles = []
         urls = []
-        reg = "[^0-9A-Za-z\u4e00-\u9fa5]"  # 标点符号 #sub(replacement, string[, count=0])
+        # reg = "[^0-9A-Za-z\u4e00-\u9fa5]"  # 标点符号 #sub(replacement, string[, count=0])
         # data = ['英國','蘋果']  #查詢的字詞
         # data = top_six
         for j in range(0, 6):

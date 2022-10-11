@@ -1,4 +1,5 @@
 from re import T
+from tabnanny import verbose
 from django.db import models
 from django.utils import timezone
 from ckeditor_uploader.fields import RichTextUploadingField
@@ -40,6 +41,7 @@ class Topic(models.Model):
     name = models.CharField(max_length=20, verbose_name="話題", blank=True)
     post_number = models.IntegerField(verbose_name="發文數", default=0)
     times = models.IntegerField(verbose_name="出現次數", default=0)
+    link = models.URLField(verbose_name="搜尋連結", blank=True, null=True)
     created_date = models.DateField(default=timezone.now,verbose_name='建立日期')
     update_date = models.DateField(auto_now=True, verbose_name='更新日期')
     class Meta:

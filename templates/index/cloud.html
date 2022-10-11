@@ -1,6 +1,6 @@
 <div class="main" id="app">
     <div class="filter">
-        <span id="Display_Now" style="float: left;">${ msg }</span>
+        <span id="Display_Now" style="float: left;">[[ msg ]]</span>
         <span @click="getYear()">年</span> /
         <span @click="getMonth()">月</span> /
         <span @click="getDay()">日</span> 
@@ -37,11 +37,11 @@
 
     let filterVue = new Vue({
         el: '#app',
-        delimiters: ['${', '}'],
+        delimiters: ['[[', ']]'],
         data: {
             search: "",
             msg: "",
-            topList: [],
+            topicList: [1,2,3,4,5,6],
         },
         mounted: function () {
             axios.post("")
@@ -70,6 +70,14 @@
                 var day = date.getDate();
                 var month = date.getMonth()+1;
                 this.msg = "今日 " + month + "/" + day +  " 的熱門關鍵字！";
+            },
+            setTopicList(top_six){
+                for(let i = 0; i < this.topicList.length; i++){
+                    console.log(this.topicList[i])
+                    this.topicList[i] = top_six
+                }
+                return this.topicList
+                
             }
         }
     })
