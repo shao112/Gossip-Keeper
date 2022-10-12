@@ -146,6 +146,7 @@
 
 .panel {
     padding: 0 18px;
+    margin-left: 355px;
     background-color: white;
     max-height: 0;
     overflow: hidden;

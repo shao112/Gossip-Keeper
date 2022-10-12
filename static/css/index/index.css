@@ -116,6 +116,12 @@
     bottom: 25px;
     width: 75%;
 }
+/* 桌電螢幕 */
+@media (max-width:1910px) {
+    .p-4 {
+        width: 481px;
+    }
+}
 /* 筆電螢幕 */
 @media (max-width:1537px) {
     .search{
