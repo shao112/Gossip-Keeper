@@ -1,11 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect, HttpResponseNotFound,HttpResponse
+from django.http import HttpResponseRedirect
 
 from .forms import LoginForm, SignupForm, PostForm
 
 from .models import Members, Post, Topic
 
-from django.db.models import Count
 from django.contrib import messages
 
 from django.core.paginator import Paginator
@@ -20,25 +19,31 @@ def index(request):
     Signup_form = SignupForm()
     ptt = PTT()
 
+    # 回傳 6 個關鍵字為陣列，要不要把 top_six 拿掉，之後改成傳 topic 就好
     top_six = ptt.scrape()
     print(top_six)
-
+    # 回傳 6 個關鍵字的 link 為陣列
     googlenews = google_news(top_six)
     link = googlenews.google()
     print("連結")
     print(link)
 
     # 看這六個關鍵字有沒有在資料庫裡，有的話就加 times，沒有就存資料庫
-    for i in top_six:
+    for i, val in enumerate(top_six):
         topic = Topic.objects.filter(name=i)
         if not topic:
             print("新的關鍵字，儲存至資料庫！")
             Topic.objects.create(name=i)
         else:
             print("已有此關鍵字，出現次數加一！")
-            topic = Topic.objects.get(name=i)
+            topic = Topic.objects.get(name=val)
             times = topic.times + 1
-            topic = Topic.objects.filter(name=i).update(times=times)
+            topic = Topic.objects.filter(name=val).update(times=times)
+        # 把這六個關鍵字的 link 存入資料庫
+        t = Topic.objects.filter(name=val)
+        if not t:
+            Topic.objects.filter(name=val).update(link=link[i])
+            print("已儲存 link!")
 
 
     if request.POST.get('submit') == '登入' and request.method == "POST":
@@ -57,7 +62,7 @@ def index(request):
         'Signup_form': Signup_form,
         'members': members,
         'ptt': top_six,
-        'link':link
+        # 'link':link
     }
 
     return render(request, "index/index.html", context)
