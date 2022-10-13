@@ -14,7 +14,7 @@ class MembersAdmin(admin.ModelAdmin):
 class PostAdmin(admin.ModelAdmin):
     list_display = ('topic', 'title', 'content', 'created_date', 'update_date')
 class TopicAdmin(admin.ModelAdmin):
-    list_display = ('name', 'post_number', 'created_date', 'update_date', 'times')
+    list_display = ('name', 'post_number', 'link','created_date', 'update_date', 'times')
 
 
 # admin要註冊才可以管理這些Table
