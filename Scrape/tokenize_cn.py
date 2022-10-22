@@ -15,7 +15,7 @@ def stopwords_create():
 reg = "[^0-9A-Za-z\u4e00-\u9fa5]"
 
 segmenter2 = hanlperceptron.Segmenter()
-# start = time.time()
+
 
 #路徑要改
 segmenter2.load('C:///Users/rauou/django/GossipKeeper/Scrape/stopword/cws.pkl')
@@ -26,6 +26,7 @@ def cn_tokenize(text):
     clear_str = re.sub(reg, '',input_str)
     list = segmenter2.segment(clear_str)
 
-    list = [token for token in list if token not in stopwords_create()]
+    list = [token for token in list if token not in stopwords_create() and len(token)!=1 and  not token.isdigit()]
+    
     return list
 
