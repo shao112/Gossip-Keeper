@@ -84,9 +84,9 @@
     position: absolute;
     right: 35%;
     bottom: 16%;
-    width: 120px;
-    height: 70px;
-    line-height: 70px;
+    width: 130px;
+    height: 80px;
+    line-height: 80px;
 }
 /* 手機、平板*/
 @media (max-width:740px) {

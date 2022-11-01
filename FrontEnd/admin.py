@@ -12,7 +12,7 @@ admin.site.index_title = '管理中心'
 class MembersAdmin(admin.ModelAdmin):
     list_display = ('name', 'gender', 'email', 'password', 'image', 'created_date', 'update_date')
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('topic', 'title', 'content', 'created_date', 'update_date')
+    list_display = ('author','topic', 'title', 'content', 'created_date', 'update_date')
 class TopicAdmin(admin.ModelAdmin):
     list_display = ('name', 'post_number', 'link','created_date', 'update_date', 'times')
 

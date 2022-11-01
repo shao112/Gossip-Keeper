@@ -54,7 +54,7 @@ class Topic(models.Model):
 # 貼文
 
 class Post(models.Model):
-    author = models.ForeignKey(Members,on_delete = models.CASCADE, null=True, blank=True)
+    author = models.ForeignKey(Members,on_delete = models.CASCADE, verbose_name="發布者", null=True, blank=True)
     #  Topic 可以透過 'post' 反向查詢 Post
     topic_fk = models.ForeignKey(Topic,on_delete = models.CASCADE, null=True, blank=True)
     topic = models.CharField(max_length=20, verbose_name="話題", blank=True)

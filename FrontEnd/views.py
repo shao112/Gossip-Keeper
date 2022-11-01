@@ -240,8 +240,18 @@ def profile(request):
     # 讀取 session
     members = request.session.get('members','')
 
+    print(members.email)
+
+    this_guy_post_number = Post.objects.filter(author=members).count()
+    print(this_guy_post_number)
+
+    post_queryset = Post.objects.filter(author=members)
+    print(post_queryset)
+
     context = {
-        'members':members
+        'members':members,
+        'this_guy_post_number':this_guy_post_number,
+        'post_queryset':post_queryset
     }
 
     return render(request, "profile/profile.html",context)
