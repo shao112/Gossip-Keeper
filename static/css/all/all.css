@@ -1,15 +1,13 @@
 /* 回上頁 跟 發文*/
 .post_page{
-    margin-left: 353px;
+    margin-left: 20px;
     margin-right: 20px;
     /* position: absolute;
     right: 516px;
     top: 75px; */
 }
-.previous_page{
-    /* position: absolute;
-    right: 330px;
-    top: 75px; */
+.home{
+    margin-left: 284px;
 }
 .post_page .btn,.previous_page .btn, .home .btn {
     font-family: 'Noto Sans TC', sans-serif;
