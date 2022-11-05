@@ -15,16 +15,17 @@
         <div class="topic">
             話題：{{ topic }}
         </div>
-        <div class="home">
+        <div class="home_page">
+            <img src="{% static 'img/all/home.png' %}" class="img-fluid btn_icon">
             <a href="{% url 'index' %}" type="button" class="btn btn-danger">回首頁</a>
         </div>
         <div class="post_page">
-            <img src="{% static 'img/topic/plus.png' %}" class="img-fluid left_arrow">
+            <img src="{% static 'img/all/plus.png' %}" class="img-fluid btn_icon">
             <a href="{% url 'post' topic=topic %}" type="button" class="btn btn-danger">發&nbsp;&nbsp;&nbsp;文</a>
         </div>
 
         <div class="previous_page">
-            <img src="{% static 'img/topic/left_arrow.png' %}" class="img-fluid left_arrow">
+            <img src="{% static 'img/all/left_arrow.png' %}" class="img-fluid btn_icon">
             <a href="{% url 'topic' %}" type="button" class="btn btn-danger">回主題</a>
         </div>
 

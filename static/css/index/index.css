@@ -117,7 +117,7 @@
     width: 75%;
 }
 /* 桌電螢幕 */
-@media (max-width:1922px) {
+@media (min-width:1900px) {
     .p-4 {
         width: 481px;
     }

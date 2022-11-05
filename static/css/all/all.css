@@ -6,10 +6,10 @@
     right: 516px;
     top: 75px; */
 }
-.home{
+.home_page{
     margin-left: 284px;
 }
-.post_page .btn,.previous_page .btn, .home .btn {
+.post_page .btn,.previous_page .btn, .home_page .btn {
     font-family: 'Noto Sans TC', sans-serif;
     color: #ffffff;
     background-color: #C23737;
@@ -17,10 +17,10 @@
     padding-left: 65px;
     border-radius: 1rem;
 }
-.post_page .btn:hover,.previous_page .btn:hover{
+.post_page .btn:hover,.previous_page .btn:hover, .home_page .btn:hover{
     background-color: #9a2a2a;
 }
-.left_arrow{
+.btn_icon{
     position: absolute;
     margin: 6px 15px;
     width: 40px;

@@ -9,3 +9,39 @@
     color: white;
     line-height: 80px;
 }
+.fire_subtitle{
+    font-weight: bold;
+    color: brown;
+}
+/* 網頁捲軸【寬+高度】 */
+::-webkit-scrollbar {
+    width: auto;
+    height: 15px;
+}
+
+/* 網頁捲軸【背景】 */
+::-webkit-scrollbar-track {
+    background: #F3B9B9;
+}
+
+/* 網頁捲軸【把手】 */
+::-webkit-scrollbar-thumb {
+    background: #c94a4a;
+    /* 圓角 */
+    border-radius: 8px;
+}
+
+/* 網頁捲軸【滑過時】把手 */
+::-webkit-scrollbar-thumb:hover {
+    background: #C23737;
+}
+.form-group{
+    padding: 25px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    background-color: #fffbf0;
+    height: 528px;
+    font-size: 1.5rem;
+    overflow: auto;
+    overflow-X: hidden;
+}

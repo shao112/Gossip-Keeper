@@ -72,7 +72,7 @@
 /* 網頁捲軸【寬+高度】 */
 ::-webkit-scrollbar {
     width: auto;
-    height: 10px;
+    height: 15px;
 }
 
 /* 網頁捲軸【背景】 */

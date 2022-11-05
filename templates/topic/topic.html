@@ -12,7 +12,7 @@
 
 
 {% block main %}
-    <div class="container">
+    <div class="container" style="height: 188px; display: flex; padding-left: 382px;">
         <div class="row row-one" style="padding:20px 0px">
             <div class="col-7">
                 <!-- 炎管家 Logo -->
@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" style="height: 558px;padding-left: 107px;">
         {% for t in topic %}
         <div class="row row-two" style="padding:10px 0px; margin-bottom: 10px;">
             
@@ -47,7 +47,7 @@
     
         {% endfor %}
         {% if topic %}
-        <div class="row row-three" style="justify-content: center; position: relative;">
+        <div class="row row-three" style="    padding-left: 344px;">
             <ul class="pagination" style="position: absolute;">
                 <li class="page-item">
                     <a href="{% if topic.has_previous %} ?page={{ topic.previous_page_number }} {% endif %}"><div class="previous_triangle"></div></a>
