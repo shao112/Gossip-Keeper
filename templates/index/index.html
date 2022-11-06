@@ -106,35 +106,12 @@
 
     <!-- 登入註冊表單 -->
     {% include 'index/signinsignup.html' %}
-    
-    <!-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.js"></script>
-
-    <script type="text/javascript">
-        function custom_template(obj){
-                var data = $(obj.element).data();
-                var text = $(obj.element).text();
-                if(data && data['img_src']){
-                    img_src = data['img_src'];
-                    template = $("<div><img src=\"" + img_src + "\" style=\"width:100%;height:100%;\"/><p style=\"font-weight: 700;font-size:14pt;text-align:center;\">" + text + "</p></div>");
-                    return template;
-                }
-            }
-        var options = {
-            'templateSelection': custom_template,
-            'templateResult': custom_template,
-        }
-        $('#id_select2_example').select2(options);
-        $('.select2-container--default .select2-selection--single').css({'height': '120px'});
-        // 更改選單長度
-        $('.select2-container--default .select2-selection--single').css({'border': '0'});
-    
-    </script> -->
     <script>
         var msg = document.getElementById("Showtxt").innerHTML;
         console.log(msg)
-            window.alert(msg);
+        window.alert(msg);
+
+        window.location.reload();
     </script>
     {% endblock %}
