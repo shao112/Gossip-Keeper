@@ -1,0 +1,55 @@
+{% extends 'base/base.html' %}
+
+{% block title %}話題{% endblock %}
+
+{% block import %}
+
+{% load static%}
+<!-- 放css連結 -->
+<link rel="stylesheet" href="{% static 'css/topic/search_topic.css' %}">
+
+{% endblock %}
+
+
+{% block main %}
+    <div class="container" style="height: 188px; display: flex; padding-left: 382px;">
+        <div class="row row-one" style="padding:20px 0px">
+            <div class="col-7">
+                <!-- 炎管家 Logo -->
+                <div class="logo">
+                    <img src="{% static 'img/index/LOGO.png' %}" class="img-fluid" alt="Gossip Keeper">
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="previous_page">
+                    <img src="{% static 'img/topic/left_arrow.png' %}" class="img-fluid left_arrow">
+                    <a href="{% url 'index' %}" type="button" class="btn">回首頁</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="height: 558px;padding-left: 107px;">
+        {% if searched %}
+            {% for t in topic %}
+            <div class="row row-two" style="padding:10px 0px; margin-bottom: 10px;">
+            
+                <div class="col-7">
+                    <a href="{% url 'all' topic=t.name %}">
+                        <div class="board shadow">
+                            <span style="margin-right:24px">🔥 # {{ t.id }}</span>{{ t.name }}
+                        </div>
+                    </a>
+                </div>
+                <div class="col-5">
+                    <h3 class="post-text">發文數：{{ t.post_number }}</h3>
+                </div>
+                
+            </div>
+            {% endfor %}
+
+        {% else %}
+            <h1>查無搜尋結果</h1>
+        {% endif %}        
+    </div>
+
+{% endblock %}

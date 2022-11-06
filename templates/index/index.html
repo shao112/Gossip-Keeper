@@ -84,14 +84,22 @@
                     <div class="slogan">
                         <img src="{% static 'img/index/slogan.png' %}" class="img" alt="slogan">
                     </div>
+                    <!-- 搜尋bar -->
                     <div class="search">
                         <div class="mb-3">
-                            <div class="input-group-prepend">
-                                <!-- <span class="input-group-text" id="basic-addon1">搜尋</span> -->
-                                <img src="{% static 'img/index/search.png' %}" class="icon" alt="">
-                            </div>
-                            <input type="text" class="form-control" placeholder="Search...">
-                          </div>
+                            <form action="{% url 'search_topic' %}" method="POST">
+                                {% csrf_token %}
+                                <div class="input-group-prepend">
+                                    <!-- <span class="input-group-text" id="basic-addon1">搜尋</span> -->
+                                    <button type="submit">
+                                        <img src="{% static 'img/index/search.png' %}" class="icon" alt="">
+                                    </button>
+                                    
+                                </div>
+                                <input type="search" class="form-control" name="searched" placeholder="Search...">
+                                </div>
+                            </form>
+                            
                     </div>
                 </div>
                 <!-- 六個文字雲 -->
@@ -112,6 +120,5 @@
         console.log(msg)
         window.alert(msg);
 
-        window.location.reload();
     </script>
     {% endblock %}

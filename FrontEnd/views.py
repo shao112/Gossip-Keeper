@@ -12,6 +12,8 @@ from django.core.paginator import Paginator
 from Scrape.scrapers import PTT
 from Scrape.googlenews_10 import google_news
 
+from django.db.models import Q
+
 # Create your views here.
 # 首頁
 def index(request):
@@ -165,6 +167,22 @@ def topic(request):
         'post_num':post_num
     }
     return render(request, "topic/topic.html", context)
+
+# 搜尋出來的話題
+def search_topic(request):
+    if request.method == "POST":
+        searched = request.POST['searched']
+        topic = Topic.objects.filter(name__contains = searched)
+
+        context = {
+            'searched': searched,
+            'topic':topic
+        }
+
+        return render(request, "topic/search_topic.html", context)
+
+    
+    return render(request, "topic/search_topic.html")
 
 # 所有文章
 def all(request, topic):

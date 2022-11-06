@@ -17,6 +17,9 @@ urlpatterns = [
     
     # 話題
     path('topic', views.topic, name='topic'),
+    # 搜尋出來的話題
+    path('topic/result', views.search_topic, name='search_topic'),
+
     # 所有文章
     path('topic/<topic>', views.all, name='all'),
     # 原本的所有文章 all 路經拿掉 變成 topic/<topic>
