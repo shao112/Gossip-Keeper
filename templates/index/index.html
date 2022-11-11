@@ -8,12 +8,15 @@
     <link rel="stylesheet" href="{% static 'css/index/index.css' %}">
     <link rel="stylesheet" href="{% static 'css/index/cloud.css' %}">
     <link rel="stylesheet" href="{% static 'css/index/signinsignup.css' %}">
+    
     <!-- 註冊登入表單的頭像選項 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" />
     
     <!-- import vue and axios -->
     <script src="{% static 'js/vue.js' %}"> </script>
     <script src="{% static 'js/axios.min.js' %}"> </script>
+    <script src="{% static 'js/index.js' %}"> </script>
+
     {% endblock %}
 
 
@@ -91,7 +94,7 @@
                                 {% csrf_token %}
                                 <div class="input-group-prepend">
                                     <!-- <span class="input-group-text" id="basic-addon1">搜尋</span> -->
-                                    <button type="submit">
+                                    <button type="submit" style="border:none">
                                         <img src="{% static 'img/index/search.png' %}" class="icon" alt="">
                                     </button>
                                     

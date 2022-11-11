@@ -23,7 +23,6 @@ def index(request):
 
     # 回傳 6 個關鍵字為陣列，要不要把 top_six 拿掉，之後改成傳 topic 就好
     top_six = ptt.scrape()
-    print(top_six)
     # 回傳 6 個關鍵字的 link 為陣列
     googlenews = google_news(top_six)
     link = googlenews.google()
