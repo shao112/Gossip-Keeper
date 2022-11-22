@@ -61,7 +61,6 @@
             getYear() {
                 var date = new Date();
                 var year = date.getFullYear();
-                // document.getElementById('Display_Now').innerHTML = "本年（" + year +  "）的熱門關鍵字"
                 this.msg = year +  " 年的熱門關鍵字！";
 
                 axios.post("{% url 'apigetdblist' 'year' %}")
@@ -89,7 +88,7 @@
                 var date = new Date();
                 var day = date.getDate();
                 var month = date.getMonth()+1;
-                this.msg = "今日 " + month + "/" + day +  " 的熱門關鍵字！";
+                this.msg = "今日熱門關鍵字！";
 
                 axios.post("{% url 'apigetdblist' 'day' %}")
                 .then((response) => {

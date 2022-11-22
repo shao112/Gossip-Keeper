@@ -35,7 +35,8 @@
             <div class="col-7">
                 <a href="{% url 'all' topic=t.name %}">
                     <div class="board shadow">
-                        <span style="margin-right:24px">🔥 # {{ t.id }}</span>{{ t.name }}
+                        <!-- <span style="margin-right:24px">🔥 # </span> -->
+                        {{ t.name }}
                     </div>
                 </a>
             </div>
