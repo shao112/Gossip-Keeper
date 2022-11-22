@@ -31,4 +31,6 @@ urlpatterns = [
     path('rule', views.rule, name='rule'),
     # 修改密碼
     path('change_password/<pk>', views.change_password, name='change_password'),
+
+    path('getlist/<dateFilter>', views.DBlist, name='apigetdblist'),
 ]

@@ -1,33 +1,33 @@
 <div class="main" id="app">
     <div class="filter">
         <span id="Display_Now" style="float: left;">[[ msg ]]</span>
-        <span @click="getYear()">年</span> /
-        <span @click="getMonth()">月</span> /
-        <span @click="getDay()">日</span> 
+        <span class="pointer" @click="getYear()">年</span> /
+        <span class="pointer" @click="getMonth()">月</span> /
+        <span class="pointer" @click="getDay()">日</span> 
     </div>
 
     <div class="cloud-one shadow bg-white">
-        <a href="{{ link.0 }}" target="_blank" rel="noopener noreferrer">{{ ptt.0 }}</a>
+        <a v-bind:href="[[ topicList[0].link ]]" target="_blank" rel="noopener noreferrer">[[ topicList[0].name ]]</a>
     </div>
 
     <div class="cloud-two shadow bg-white">
-        <a href="{{ link.1 }}" target="_blank" rel="noopener noreferrer">{{ ptt.1 }}</a>
+        <a v-bind:href="[[ topicList[1].link ]]" target="_blank" rel="noopener noreferrer">[[ topicList[1].name ]]</a>
     </div>
 
     <div class="cloud-three shadow bg-white">
-        <a href="{{ link.2 }}" target="_blank" rel="noopener noreferrer">{{ ptt.2 }}</a>
+        <a v-bind:href="[[ topicList[2].link ]]" target="_blank" rel="noopener noreferrer">[[ topicList[2].name ]]</a>
     </div>
 
     <div class="cloud-four shadow bg-white">
-        <a href="{{ link.3 }}" target="_blank" rel="noopener noreferrer">{{ ptt.3 }}</a>
+        <a v-bind:href="[[ topicList[3].link ]]" target="_blank" rel="noopener noreferrer">[[ topicList[3].name ]]</a>
     </div>
 
     <div class="cloud-five shadow bg-white">
-        <a href="{{ link.4 }}" target="_blank" rel="noopener noreferrer">{{ ptt.4 }}</a>
+        <a v-bind:href="[[ topicList[4].link ]]" target="_blank" rel="noopener noreferrer">[[ topicList[4].name ]]</a>
     </div>
 
     <div class="cloud-six shadow bg-white">
-        <a href="{{ link.5 }}" target="_blank" rel="noopener noreferrer">{{ ptt.5 }}</a>
+        <a v-bind:href="[[ topicList[5].link ]]" target="_blank" rel="noopener noreferrer">[[ topicList[5].name ]]</a>
     </div>
 </div>
 
@@ -40,16 +40,20 @@
         delimiters: ['[[', ']]'],
         data: {
             search: "",
-            msg: "",
-            topicList: [1,2,3,4,5,6],
+            msg: "今日熱門關鍵字",
+            topicList: [],
         },
         mounted: function () {
-            axios.post("")
+            axios.post("{% url 'apigetdblist' 'day' %}")
                 .then((response) => {
-                    console.log(response)
-                    // let getdata = response.data;
-                    // console.log(getdata);
-                    // this.topList = getdata;
+                    let getdata = response.data;
+                    console.log(getdata[0]);
+                    // for(let i = 0; i < 6; i++){
+                    //     console.log(getdata[i].name);
+                    //     this.topicList.push(getdata[i].name);
+                    // }
+                    this.topicList = getdata;
+                    // console.log(this.topicList);
                 })
                 .catch((error) => console.log(error));
         },
@@ -59,26 +63,49 @@
                 var year = date.getFullYear();
                 // document.getElementById('Display_Now').innerHTML = "本年（" + year +  "）的熱門關鍵字"
                 this.msg = year +  " 年的熱門關鍵字！";
+
+                axios.post("{% url 'apigetdblist' 'year' %}")
+                    .then((response) => {
+                        let getdata = response.data;
+                        console.log(getdata[0]);
+                        this.topicList = getdata;
+                    })
+                    .catch((error) => console.log(error));
             },
             getMonth() {
                 var date = new Date();
                 var month = date.getMonth()+1;
                 this.msg = "今年 " + month +  " 月的熱門關鍵字！";
+
+                axios.post("{% url 'apigetdblist' 'month' %}")
+                    .then((response) => {
+                        let getdata = response.data;
+                        console.log(getdata[0]);
+                        this.topicList = getdata;
+                    })
+                    .catch((error) => console.log(error));
             },
             getDay(){
                 var date = new Date();
                 var day = date.getDate();
                 var month = date.getMonth()+1;
                 this.msg = "今日 " + month + "/" + day +  " 的熱門關鍵字！";
+
+                axios.post("{% url 'apigetdblist' 'day' %}")
+                .then((response) => {
+                    let getdata = response.data;
+                    this.topicList = getdata;
+                })
+                .catch((error) => console.log(error));
             },
-            setTopicList(top_six){
-                for(let i = 0; i < this.topicList.length; i++){
-                    console.log(this.topicList[i])
-                    this.topicList[i] = top_six
-                }
-                return this.topicList
+            // setTopicList(top_six){
+            //     for(let i = 0; i < this.topicList.length; i++){
+            //         console.log(this.topicList[i])
+            //         this.topicList[i] = top_six
+            //     }
+            //     return this.topicList
                 
-            }
+            // }
         }
     })
 </script>

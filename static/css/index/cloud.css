@@ -88,6 +88,9 @@
     height: 80px;
     line-height: 80px;
 }
+.pointer{
+    cursor: pointer;
+}
 /* 手機、平板*/
 @media (max-width:740px) {
     .cloud-one,.cloud-two,.cloud-three,.cloud-four,.cloud-five,.cloud-six{

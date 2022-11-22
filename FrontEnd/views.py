@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 
 from .forms import LoginForm, SignupForm, PostForm
 
@@ -13,8 +13,46 @@ from Scrape.scrapers import PTT
 from Scrape.googlenews_10 import google_news
 
 from django.db.models import Q
+from django.views.decorators.csrf import csrf_exempt
+import datetime
+from django.utils import timezone
 
-# Create your views here.
+@csrf_exempt
+def DBlist(request, dateFilter):
+    # ptt = PTT()
+    # top_six = ptt.scrape()
+
+    now = datetime.datetime.now()
+    datalist = []
+    print(dateFilter)
+    if(dateFilter == "day"):
+        # getdata = Topic.objects.all()[:6]
+        getdata = Topic.objects.filter(update_date=now)[:6]
+        for one_data in getdata:
+            data = one_data.to_dict()
+            print("-------------------")
+            print(data)
+            datalist.append(data)
+            print(datalist)
+        # datalist = top_six
+        # print(datalist)
+    elif(dateFilter == "month"):
+        getdata = Topic.objects.filter(created_date__month=now.month)[:6]
+        for one_data in getdata:
+            data = one_data.to_dict()
+            print("-------------------")
+            print(data)
+            datalist.append(data)
+    elif(dateFilter == "year"):
+        getdata = Topic.objects.filter(created_date__year=now.year)[:6]
+        for one_data in getdata:
+            data = one_data.to_dict()
+            print("-------------------")
+            print(data)
+            datalist.append(data)
+    
+    return JsonResponse(datalist, safe=False)
+
 # 首頁
 def index(request):
     Login_form = LoginForm()
@@ -26,8 +64,8 @@ def index(request):
     # 回傳 6 個關鍵字的 link 為陣列
     googlenews = google_news(top_six)
     link = googlenews.google()
-    print("連結")
-    print(link)
+    # print("連結")
+    # print(link)
 
     # 看這六個關鍵字有沒有在資料庫裡，有的話就加 times，沒有就存資料庫
     for i, val in enumerate(top_six):
@@ -42,6 +80,7 @@ def index(request):
             topic = Topic.objects.get(name=val)
             times = topic.times + 1
             topic = Topic.objects.filter(name=val).update(times=times)
+            topic = Topic.objects.filter(name=val).update(update_date=datetime.datetime.now())
         # 把這六個關鍵字的 link 存入資料庫
         # t = Topic.objects.filter(name=val)
         Topic.objects.filter(name=val).update(link=link[i])
@@ -55,16 +94,26 @@ def index(request):
         print("進到註冊")
         return singup(request)
     
+    # now = datetime.datetime.now()
+    # print("---- now.day -----")
+    # print(now.day)
+    # month_topic = Topic.objects.filter(created_date__month=now.month)[:6]
+    # year_topic = Topic.objects.filter(created_date__year=now.year)[:6]
+    # print("month topic")
+    # print(month_topic)
+    # print("year topic")
+    # print(year_topic)
+
     # 讀取 session
     members = request.session.get('members','')
-    
     
     context = {
         'Login_form': Login_form,
         'Signup_form': Signup_form,
         'members': members,
-        'ptt': top_six,
-        'link':link
+        # 'ptt': top_six,
+        # 'topic': topic,
+        # 'link':link
     }
 
     return render(request, "index/index.html", context)

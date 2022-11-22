@@ -1,8 +1,8 @@
 from re import T
-from tabnanny import verbose
 from django.db import models
 from django.utils import timezone
 from ckeditor_uploader.fields import RichTextUploadingField
+from itertools import chain
 # Create your models here.
 
 # 會員
@@ -47,9 +47,17 @@ class Topic(models.Model):
     class Meta:
         verbose_name = "話題"   # 單數
         verbose_name_plural = verbose_name   #複數
-        # ordering = ['-id']
+        ordering = ['-times']
     def __str__(self):
         return self.name
+    def to_dict(self):
+        opts = self._meta
+        data ={}
+        for f in chain(opts.concrete_fields, opts.private_fields):
+            print("_____________")
+            print(f.name)
+            data[f.name] = f.value_from_object(self)
+        return data
 
 # 貼文
 
